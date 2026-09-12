@@ -1,0 +1,23 @@
+name: homepage
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:${HOMEPAGE_VERSION:-latest}
+    container_name: homepage
+    init: true
+    user: "${PUID:-0}:${PGID:-0}"
+    environment:
+      TZ: ${TZ}
+      HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
+      HOMEPAGE_VAR_IMMICH_URL: ${HOMEPAGE_VAR_IMMICH_URL}
+      HOMEPAGE_VAR_IMMICH_API_KEY: ${HOMEPAGE_VAR_IMMICH_API_KEY}
+      HOMEPAGE_VAR_PLEX_URL: ${HOMEPAGE_VAR_PLEX_URL}
+      HOMEPAGE_VAR_PLEX_TOKEN: ${HOMEPAGE_VAR_PLEX_TOKEN}
+      HOMEPAGE_VAR_STORAGE_STATS_URL: ${HOMEPAGE_VAR_STORAGE_STATS_URL}
+    volumes:
+      - ${HOMEPAGE_CONFIG_PATH}:/app/config
+      - ${HOST_STATS_PATH}:/app/public/host-stats:ro
+      - ${DOCKER_SOCKET_PATH:-/var/run/docker.sock}:/var/run/docker.sock:ro
+    ports:
+      - "${HOMEPAGE_BIND_ADDRESS:-0.0.0.0}:${HOMEPAGE_PORT:-3000}:3000"
+    restart: unless-stopped

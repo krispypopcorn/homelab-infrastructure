@@ -1,0 +1,17 @@
+/* Minimal public styling. Private dashboard artwork is intentionally excluded. */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container {
+  max-width: 100vw !important;
+}
+
+.service-card {
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+}

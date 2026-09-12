@@ -1,0 +1,14 @@
+---
+title: Homelab
+headerStyle: clean
+theme: dark
+color: slate
+hideVersion: true
+useEqualHeights: true
+statusStyle: dot
+layout:
+  Infrastructure:
+fullWidth: true
+
+# The private deployment may use local artwork. It is intentionally excluded
+# from this public configuration.

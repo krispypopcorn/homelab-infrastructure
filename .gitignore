@@ -1,0 +1,56 @@
+# Populated environment files and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+secrets/
+**/secrets/
+
+# Runtime state and private content
+runtime/
+backups/
+appdata/
+**/appdata/
+immich-app/library/
+immich-app/postgres/
+config/homepage/images/
+
+# Databases, logs, dumps, archives, and generated state
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.log
+*.pid
+*.lock
+*.sql
+*.dump
+*.backup
+*.bak
+*.tar
+*.tar.gz
+*.zip
+
+# Keys and certificates
+*.key
+*.pem
+*.crt
+*.cert
+*.cer
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+adbkey*
+
+# Local tooling and operating-system files
+.DS_Store
+**/.DS_Store
+*.swp
+*.tmp
+*~
+.idea/
+.vscode/

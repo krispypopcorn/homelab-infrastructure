@@ -1,0 +1,11 @@
+---
+- Documentation:
+    - Docker:
+        - abbr: DO
+          href: https://docs.docker.com/
+    - Immich:
+        - abbr: IM
+          href: https://docs.immich.app/
+    - Tailscale:
+        - abbr: TS
+          href: https://tailscale.com/kb

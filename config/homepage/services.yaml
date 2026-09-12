@@ -1,0 +1,41 @@
+---
+- Infrastructure:
+    - Storage:
+        icon: mdi-harddisk
+        description: Host storage capacity
+        widget:
+          type: customapi
+          url: "{{HOMEPAGE_VAR_STORAGE_STATS_URL}}"
+          refreshInterval: 60000
+          mappings:
+            - field: used
+              label: Used
+              format: bytes
+            - field: total
+              label: Total
+              format: bytes
+            - field: available
+              label: Free
+              format: bytes
+
+    - Immich:
+        icon: immich.png
+        description: Self-hosted photo service
+        href: "{{HOMEPAGE_VAR_IMMICH_URL}}"
+        server: local
+        container: immich_server
+        widget:
+          type: immich
+          url: "{{HOMEPAGE_VAR_IMMICH_URL}}"
+          key: "{{HOMEPAGE_VAR_IMMICH_API_KEY}}"
+          version: 2
+
+    - Plex:
+        icon: plex.png
+        description: Host-installed media server
+        href: "{{HOMEPAGE_VAR_PLEX_URL}}"
+        ping: "{{HOMEPAGE_VAR_PLEX_URL}}"
+        widget:
+          type: plex
+          url: "{{HOMEPAGE_VAR_PLEX_URL}}"
+          key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
